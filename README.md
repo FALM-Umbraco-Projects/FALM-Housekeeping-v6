@@ -10,7 +10,9 @@ N.B.: in the current release this feature works only with "UploadAllowDirectorie
 
 Versions History
 =================
-- v6.0.0.0 - Fix: update connectionstring
+- v6.0.0.0 - Fix: 
+update connectionstring
+umbraco v7 compatibility (may be necessary to clear browser cache after installation)
 ********************************************************************************************************************
 ATTENTION
 Please uninstall any previous version before install this version.
