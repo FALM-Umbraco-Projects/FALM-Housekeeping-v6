@@ -91,23 +91,32 @@ namespace FALMHousekeepingVersionsManager
 				txtNVer.Text = "0";
 			}
 
-			strSQLGetVersions  = @"SELECT nodeId, published, documentUser, versionId, text, releaseDate, expireDate, updateDate, templateId, newest into #tmp 
-									FROM cmsDocument WHERE versionID NOT IN 
-									(SELECT D.versionId FROM cmsDocument D WHERE D.versionId IN 
-									(SELECT versionId FROM 
-									(SELECT CV.versionId, published, newest, RANK() OVER(ORDER BY CV.versionDate DESC) RowNum FROM cmsContentVersion CV 
-									JOIN cmsDocument DD ON CV.versionId = DD.versionId WHERE DD.nodeId = D.nodeId) AS tmp 
-									WHERE tmp.RowNum <= @versionsToKeep OR tmp.published = 1 OR tmp.newest = 1)) 
+			strSQLGetVersions = @"CREATE TABLE #tmp
+									(
+										nodeId int,
+										published bit,
+										documentUser int,
+										versionId uniqueidentifier,
+										text nvarchar(255),
+										releaseDate datetime,
+										expireDate datetime,
+										updateDate datetime,
+										templateId int,
+										newest bit
+									);
+
+									INSERT INTO #tmp(nodeId, published, documentUser, versionId, text, releaseDate, expireDate, updateDate, templateId, newest)
+									SELECT nodeId, published, documentUser, versionId, text, releaseDate, expireDate, updateDate, templateId, newest FROM cmsDocument WHERE versionID NOT IN (SELECT D.versionId FROM cmsDocument D WHERE D.versionId IN (SELECT versionId FROM (SELECT CV.versionId, published, newest, RANK() OVER(ORDER BY CV.versionDate DESC) RowNum FROM cmsContentVersion CV JOIN cmsDocument DD ON CV.versionId = DD.versionId WHERE DD.nodeId = D.nodeId) AS tmp WHERE tmp.RowNum <= @versionsToKeep OR tmp.published = 1 OR tmp.newest = 1));
 									
-									DELETE FROM cmsPreviewXml WHERE VersionId IN (SELECT #tmp.VersionId FROM #tmp WHERE #tmp.published = 0 AND #tmp.newest = 0) 
+									DELETE FROM cmsPreviewXml WHERE VersionId IN (SELECT #tmp.VersionId FROM #tmp WHERE #tmp.published = 0 AND #tmp.newest = 0);
 									
-									DELETE FROM cmsContentVersion WHERE VersionId IN (SELECT #tmp.VersionId FROM #tmp WHERE #tmp.published = 0 AND #tmp.newest = 0)
+									DELETE FROM cmsContentVersion WHERE VersionId IN (SELECT #tmp.VersionId FROM #tmp WHERE #tmp.published = 0 AND #tmp.newest = 0);
 									
-									DELETE FROM cmsPropertyData WHERE VersionId IN (SELECT #tmp.VersionId FROM #tmp WHERE #tmp.published = 0 AND #tmp.newest = 0)
+									DELETE FROM cmsPropertyData WHERE VersionId IN (SELECT #tmp.VersionId FROM #tmp WHERE #tmp.published = 0 AND #tmp.newest = 0);
 									
-									DELETE FROM cmsDocument WHERE VersionId IN (SELECT #tmp.VersionId FROM #tmp WHERE #tmp.published = 0 AND #tmp.newest = 0)
+									DELETE FROM cmsDocument WHERE VersionId IN (SELECT #tmp.VersionId FROM #tmp WHERE #tmp.published = 0 AND #tmp.newest = 0);
 									
-									DROP TABLE #tmp";
+									DROP TABLE #tmp;";
 			// cleanup versions
 			int iVersionsCount = SqlHelper.ExecuteNonQuery(strSQLGetVersions, SqlHelper.CreateParameter("@versionsToKeep", txtNVer.Text));
 
