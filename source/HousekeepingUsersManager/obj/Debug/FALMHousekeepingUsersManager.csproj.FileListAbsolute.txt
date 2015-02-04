@@ -12,8 +12,8 @@
 \\psf\Home\Documents\Visual Studio 2010\Projects\FALM Projects\net 4\FALM_Housekeeping\HousekeepingUsersManager\obj\Debug\FALMHousekeepingUsersManager.pdb
 \\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\published\Housekeeping\bin\FALMHousekeepingUsersManager.dll
 \\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\published\Housekeeping\bin\FALMHousekeepingUsersManager.pdb
-\\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\source\published\Housekeeping\bin\FALMHousekeepingUsersManager.dll
-\\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\source\published\Housekeeping\bin\FALMHousekeepingUsersManager.pdb
 \\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\source\HousekeepingUsersManager\obj\Debug\FALMHousekeepingUsersManager.csprojResolveAssemblyReference.cache
 \\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\source\HousekeepingUsersManager\obj\Debug\FALMHousekeepingUsersManager.dll
 \\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\source\HousekeepingUsersManager\obj\Debug\FALMHousekeepingUsersManager.pdb
+\\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\source\published\Housekeeping\bin\FALMHousekeepingUsersManager.dll
+\\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\source\published\Housekeeping\bin\FALMHousekeepingUsersManager.pdb

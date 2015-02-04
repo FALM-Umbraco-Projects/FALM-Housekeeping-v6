@@ -20,7 +20,7 @@
 					<td><small><asp:Label ID="lblFilterByDateRangeTo" runat="server"></asp:Label></small></td>
 				</tr>
 				<tr>
-					<td><asp:TextBox ID="txtbNodeID" runat="server" /></td>
+					<td><asp:TextBox ID="txtbNodeID" runat="server" /><//td>
 					<td>
 						<asp:DropDownList ID="ddlUsers" AppendDataBoundItems="true" runat="server" DataSourceID="SqlDSUsers" DataTextField="userName" DataValueField="Id">
 						</asp:DropDownList>

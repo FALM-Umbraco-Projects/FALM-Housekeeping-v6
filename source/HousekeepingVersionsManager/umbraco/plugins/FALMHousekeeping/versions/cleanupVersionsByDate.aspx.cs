@@ -83,7 +83,7 @@ namespace FALMHousekeepingVersionsManager
 				dtpckrDate.DateTime = DateTime.Now;
 			}
 
-			strSQLGetVersions = @"SELECT nodeId, published, documentUser, versionId, text, releaseDate, expireDate, updateDate, templateId, newest into #tmp 
+			strSQLGetVersions = @"SELECT nodeId, published, documentUser, versionId, text, releaseDate, expireDate, updateDate, templateId, alias, newest into #tmp 
 									FROM cmsDocument WHERE versionID NOT IN 
 									(SELECT D.versionId FROM cmsDocument D WHERE D.versionId IN 
 									(SELECT versionId FROM 

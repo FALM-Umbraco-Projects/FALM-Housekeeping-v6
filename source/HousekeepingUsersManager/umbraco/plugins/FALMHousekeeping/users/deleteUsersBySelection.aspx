@@ -149,7 +149,6 @@
 					<asp:Parameter DefaultValue="0" Name="id" Type="Int32" />
 				</SelectParameters>
 			</asp:SqlDataSource>
-			<p>&nbsp;</p>
 			<p>
 				<asp:Button ID="btnDeleteUsers" runat="server" Text="Delete selected users" OnClientClick="return confirmMsg(this.form)" OnClick="btnDeleteUsers_Click" />
 			</p>

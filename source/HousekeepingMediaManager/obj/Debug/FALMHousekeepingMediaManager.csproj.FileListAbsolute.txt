@@ -12,8 +12,8 @@
 \\psf\Home\Documents\Visual Studio 2010\Projects\FALM Projects\net 4\FALM_Housekeeping\HousekeepingMediaManager\obj\Debug\FALMHousekeepingMediaManager.pdb
 \\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\published\Housekeeping\bin\FALMHousekeepingMediaManager.dll
 \\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\published\Housekeeping\bin\FALMHousekeepingMediaManager.pdb
-\\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\source\published\Housekeeping\bin\FALMHousekeepingMediaManager.dll
-\\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\source\published\Housekeeping\bin\FALMHousekeepingMediaManager.pdb
 \\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\source\HousekeepingMediaManager\obj\Debug\FALMHousekeepingMediaManager.csprojResolveAssemblyReference.cache
 \\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\source\HousekeepingMediaManager\obj\Debug\FALMHousekeepingMediaManager.dll
 \\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\source\HousekeepingMediaManager\obj\Debug\FALMHousekeepingMediaManager.pdb
+\\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\source\published\Housekeeping\bin\FALMHousekeepingMediaManager.dll
+\\psf\Home\Documents\GitHub Repository\Umbraco\FALM-Housekeeping-v6\source\published\Housekeeping\bin\FALMHousekeepingMediaManager.pdb
