@@ -10,13 +10,14 @@ N.B.: in the current release this feature works only with "UploadAllowDirectorie
 
 Versions History
 =================
+********************************************************************************************************************
+ATTENTION
+Please uninstall any previous version before install.
+********************************************************************************************************************
+- v6.1.1.0 - Fix: Issues #1 and #3
 - v6.0.0.0 - Fix: 
 update connectionstring
 umbraco v7 compatibility (may be necessary to clear browser cache after installation)
-********************************************************************************************************************
-ATTENTION
-Please uninstall any previous version before install this version.
-********************************************************************************************************************
 - v4.11.0.2 - improved multilanguage support (Dictionary)
 Now the dictionary items are taken according to the backoffice user's language.
 - v4.11.0.1 - fixed issue
