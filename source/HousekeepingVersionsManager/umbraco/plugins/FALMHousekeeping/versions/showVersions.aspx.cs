@@ -89,7 +89,7 @@ namespace FALMHousekeepingVersionsManager
 			strSQLCurrentVersion += "WHERE (CurDoc.published = 1) ";
 			if (!txtbNodeID.Text.Equals(string.Empty))
 			{
-				strSQLCurrentVersion += "AND CurDoc.nodeId = " + int.Parse(txtbNodeID.Text) + " ";
+				strSQLCurrentVersion += "AND nodeId = " + int.Parse(txtbNodeID.Text) + " ";
 			}
 			strSQLCurrentVersion += GetDateRangeFilter();
 			strSQLCurrentVersion += "ORDER BY CurDoc.nodeId ASC";
