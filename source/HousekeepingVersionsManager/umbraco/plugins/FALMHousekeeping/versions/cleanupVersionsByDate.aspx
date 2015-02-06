@@ -14,7 +14,7 @@
 		<cc1:Pane ID="PanelCleanupVersionsByDate" runat="server" Text="Cleanup versions by Date">
 			<asp:Label ID="lblSubTitle" runat="server"></asp:Label>
 			<asp:Label ID="lblWarning" runat="server"></asp:Label>
-
+			<asp:Label ID="ltrlInfoMessage" runat="server" Text="" />
 			<p>
 				<span style="float: left;"><asp:Label ID="lblDeleteAllVersionsUpTo" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;</span>
 				<cc2:DateTimePicker ID="dtpckrDate" runat="server" ShowTime="false" />&nbsp;&nbsp;&nbsp;

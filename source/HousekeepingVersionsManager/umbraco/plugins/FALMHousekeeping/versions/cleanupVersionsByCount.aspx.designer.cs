@@ -49,6 +49,15 @@ namespace FALMHousekeepingVersionsManager {
         protected global::System.Web.UI.WebControls.Label lblWarning;
         
         /// <summary>
+        /// Controllo ltrlInfoMessage.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label ltrlInfoMessage;
+        
+        /// <summary>
         /// Controllo lblNumberOfVersionsToKeep.
         /// </summary>
         /// <remarks>

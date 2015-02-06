@@ -4,6 +4,8 @@ using umbraco.cms.businesslogic;
 using umbraco.cms.businesslogic.language;
 using umbraco.cms.businesslogic.web;
 using umbraco.DataLayer;
+using System.Data.SqlClient;
+using umbraco.DataLayer.SqlHelpers.SqlServer;
 
 namespace FALMHousekeepingVersionsManager
 {
@@ -57,8 +59,11 @@ namespace FALMHousekeepingVersionsManager
 			// Page Warning
 			if (getDictionaryItem("versions_CleanupByCount_PageWarning") != string.Empty)
 			{
-				lblWarning.Text = "<p><strong><em>" + getDictionaryItem("versions_CleanupByCount_PageWarning") + "</em></strong></p><br /><br />";
+				lblWarning.Text = "<p><strong><em>" + getDictionaryItem("versions_CleanupByCount_PageWarning") + "</em></strong></p>";
 			}
+
+			// Cleanup Info Message
+			ltrlInfoMessage.Text = "<p><strong><em>" + getDictionaryItem("versions_Common_InfoMessage") + "</em></strong></p>";
 
 			// Set Labels
 			lblNumberOfVersionsToKeep.Text = getDictionaryItem("versions_CleanupByCount_NumberOfVersionsToKeep");
@@ -117,8 +122,20 @@ namespace FALMHousekeepingVersionsManager
 									DELETE FROM cmsDocument WHERE VersionId IN (SELECT #tmp.VersionId FROM #tmp WHERE #tmp.published = 0 AND #tmp.newest = 0);
 									
 									DROP TABLE #tmp;";
-			// cleanup versions
-			int iVersionsCount = SqlHelper.ExecuteNonQuery(strSQLGetVersions, SqlHelper.CreateParameter("@versionsToKeep", txtNVer.Text));
+
+			// cleanup versions v1 - This version go in timeout (after 30 seconds) with large amount of history versions.
+			//int iVersionsCount = SqlHelper.ExecuteNonQuery(strSQLGetVersions, SqlHelper.CreateParameter("@versionsToKeep", txtNVer.Text));
+
+			// cleanup versions v2 - This version don't go in timeout
+			var sqlConnection = new SqlConnection(SqlHelper.ConnectionString);
+			sqlConnection.Open();
+			var command = new SqlCommand(strSQLGetVersions, sqlConnection);
+			command.CommandTimeout = 100000;
+			command.Parameters.AddWithValue("@versionsToKeep", txtNVer.Text);
+			int iVersionsCount = command.ExecuteNonQuery();
+			command.Dispose();
+			sqlConnection.Close();
+			sqlConnection.Dispose();
 
 			// Print result
 			ltrlVersions.Text = getDictionaryItem("versions_Label_NumberOfVersionsDeleted") + " " + iVersionsCount;

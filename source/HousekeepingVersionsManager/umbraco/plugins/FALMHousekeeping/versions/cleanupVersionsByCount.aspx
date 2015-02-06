@@ -13,7 +13,7 @@
 		<cc1:Pane ID="PanelCleanupVersionsByCount" runat="server" Text="Cleanup versions by Count">
 			<asp:Label ID="lblSubTitle" runat="server"></asp:Label>
 			<asp:Label ID="lblWarning" runat="server"></asp:Label>
-
+			<asp:Label ID="ltrlInfoMessage" runat="server" Text=""></asp:Label>
 			<p>
 				<asp:Label ID="lblNumberOfVersionsToKeep" runat="server"></asp:Label>&nbsp;&nbsp;&nbsp;
 				<asp:TextBox ID="txtNVer" Width="20" MaxLength="2" runat="server" />&nbsp;&nbsp;&nbsp;

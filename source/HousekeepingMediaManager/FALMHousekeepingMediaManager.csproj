@@ -126,7 +126,28 @@
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(ProjectDir)*.gif" "$(TargetDir)..\" /s /y
 xcopy "$(ProjectDir)*.aspx" "$(TargetDir)..\" /s /y
-xcopy "$(ProjectDir)*.js" "$(TargetDir)..\" /s /y</PostBuildEvent>
+xcopy "$(ProjectDir)*.js" "$(TargetDir)..\" /s /y
+
+xcopy "$(TargetDir)FALMHousekeepingMediaManager.dll" "$(ProjectDir)\bin" /y
+xcopy "$(TargetDir)FALMHousekeepingMediaManager.pdb" "$(ProjectDir)\bin" /y
+del /Q "$(TargetDir)FALMHousekeepingMediaManager.pdb"
+
+xcopy "$(TargetDir)businesslogic.dll" "$(ProjectDir)\bin" /y
+del /Q "$(TargetDir)businesslogic.dll"
+xcopy "$(TargetDir)ClientDependency.Core.dll" "$(ProjectDir)\bin" /y
+del /Q "$(TargetDir)ClientDependency.Core.dll"
+xcopy "$(TargetDir)cms.dll" "$(ProjectDir)\bin" /y
+del /Q "$(TargetDir)cms.dll"
+xcopy "$(TargetDir)controls.dll" "$(ProjectDir)\bin" /y
+del /Q "$(TargetDir)controls.dll"
+xcopy "$(TargetDir)interfaces.dll" "$(ProjectDir)\bin" /y
+del /Q "$(TargetDir)interfaces.dll"
+xcopy "$(TargetDir)Umbraco.Core.dll" "$(ProjectDir)\bin" /y
+del /Q "$(TargetDir)Umbraco.Core.dll"
+xcopy "$(TargetDir)umbraco.DataLayer.dll" "$(ProjectDir)\bin" /y
+del /Q "$(TargetDir)umbraco.DataLayer.dll"
+xcopy "$(TargetDir)umbraco.dll" "$(ProjectDir)\bin" /y
+del /Q "$(TargetDir)umbraco.dll"</PostBuildEvent>
   </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
